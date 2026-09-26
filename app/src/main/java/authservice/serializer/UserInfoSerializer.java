@@ -16,11 +16,11 @@ public class UserInfoSerializer implements Serializer<UserInfoEvent>
     @Override
     public byte[] serialize(String arg0, UserInfoEvent arg1) {
         byte[] retVal = null;
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper(); //to go from one DTo to another we can use object mapper
         try {
             retVal = objectMapper.writeValueAsString(arg1).getBytes();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); //prints all the stacks before this exception and then prints the exception message
         }
         return retVal;
     }
